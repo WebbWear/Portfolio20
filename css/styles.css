@@ -1,5 +1,8 @@
 /* Main Layout
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+  position: relative;
+}
 .content-body {
   display: block;
   margin: 0 auto;
@@ -19,15 +22,17 @@ h1 {
 /* ABOUT 
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .about-section {
-  background-image: url("../images/subtle-freckles.png");
-  background-color: rgb(17, 17, 17);
+  overflow: hidden;
+
   width: 100%;
   height: 70vh;
   box-sizing: border-box;
 }
 .about-container {
-  padding-top: 8em;
+  padding-top: 2em;
   /* border: 1px solid green; */
+  position: relative;
+  z-index: 100;
 
   /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
 }
@@ -60,15 +65,12 @@ img {
 }
 
 body {
-  background-image: url("../images/subtle-freckles.png");
-
   background: #f2f3ee;
   color: #000;
   overflow-x: hidden;
   padding-bottom: 50px;
 } /* INTRO SECTION
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 .intro {
   background: #f2f3ee;
   padding: 100px 0;
@@ -221,3 +223,39 @@ time {
 
 /* END TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* CONTACT
+ –––––––––––––––––––––––––––––––––––––––––––––––––– */
+ .contact {
+  color: black;
+  text-align: center;
+}
+
+.contact p {
+  margin: 70px 0 0;
+}
+
+.contact ul a {
+  margin-top: 50px;
+  box-shadow: none;
+  background: none;
+  margin-left: 30px;
+}
+
+.contact li:nth-child(1) a {
+  margin-left: 0;
+}
+
+.contact span {
+  font-size: 2em;
+  color: white;
+  -webkit-transition: color ease .4s;
+          transition: color ease .4s;
+}
+
+.contact span:hover {
+  color: red;
+
+ /* END CONTACT
+ –––––––––––––––––––––––––––––––––––––––––––––––––– */
+

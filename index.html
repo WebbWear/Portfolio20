@@ -51,6 +51,7 @@
 
       <div class="about-section">
         <div class="container about-container">
+          <canvas id="nodes"></canvas>
           <div class="four columns head-shot">
             <img src="images/Jeff_Webb.png" alt="Jeff Webb Head shot" />
           </div>
@@ -163,19 +164,69 @@
       </div>
       <!--End Skills Graph-->
 
-      <footer>
-        <div class="container">
-          <div class="row twelve columns">Footer 1</div>
-          <i class="fas fa-code"></i>
-          <i class="fas fa-coffee"></i>
+      <footer class="contact">
+        < class="container">
+        <div class="row twelve columns">Footer 1</div>
+        <i class="fas fa-code"></i>
+        <i class="fas fa-coffee"></i>
 
-          <div class="row twelve columns">Footer 2</div>
+        <div class="row">
+          <div class="offset-by-two eight columns">
+            <ul>
+              <li>
+                <a href="#" title=""><span class="fa fa-facebook"></span></a>
+              </li>
+              <li>
+                <a href="#" title=""><span class="fa fa-twitter"></span></a>
+              </li>
+              <li>
+                <a href="#" title=""><span class="fa fa-dribbble"></span></a>
+              </li>
+              <li>
+                <a href="#" title=""><span class="fa fa-linkedin"></span></a>
+              </li>
+              <li>
+                <a href="#" title=""><span class="fab fa-github"></span></a>
+              </li>
+            </ul>
+          </div>
         </div>
+        <!--end of .row-->
       </footer>
     </div>
     <!-- JavaScript source
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script src="./scripts/timeline.js"></script>
+
+    <!-- <bgAnimated.js embedding> -->
+
+    <script type="text/javascript" src="./scripts/bgAnimated.js"></script>
+    <script type="text/javascript">
+      var nodesjs = new NodesJs({
+        id: "nodes",
+        width: window.innerWidth,
+        height: window.innerHeight,
+        particleSize: 2,
+        lineSize: 1,
+        particleColor: [27, 27, 27, 0.3],
+        lineColor: [27, 27, 27],
+        backgroundFrom: [242, 243, 238],
+        backgroundTo: [242, 243, 238],
+        backgroundDuration: 4000,
+        nobg: false,
+        number: window.hasOwnProperty("orientation") ? 30 : 100,
+        speed: 20
+      });
+    </script>
+
+    <!-- <bgAnimated.js embedding> -->
+
+    <script type="text/javascript">
+      window.onresize = function() {
+        nodesjs.setWidth(window.innerWidth);
+        nodesjs.setHeight(window.innerHeight);
+      };
+    </script>
     <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   </body>
