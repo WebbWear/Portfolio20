@@ -24,20 +24,21 @@ h1 {
 /* ABOUT 
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .about-section {
+  position: relative;
+}
+.about-section #nodes, #overlay {
+  position: absolute;
+}
+.about-container {
+  /* border: 1px solid green; */
   overflow: hidden;
-
   width: 100%;
   height: 70vh;
   box-sizing: border-box;
-}
-.about-container {
-  padding-top: 2em;
-  /* border: 1px solid green; */
+  padding-top: 1.5em;
   position: relative;
-  z-index: 100;
-
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
 }
+
 .head-shot {
   /* border: 1px solid black; */
   /* height: 100vh;
@@ -45,11 +46,19 @@ h1 {
   position: relative; 
   z-index: 100;
 }
-÷ .about-content {
+÷ .about-content, #overlay {
   /* border: 1px solid black; */
-  height: 100vh;
-  width: 100vw;
-  font-size: 2px;
+  font-size: 5rem;
+  margin: 0;
+  /* background: grey; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+.highlight {
+  color: rgb(229, 59, 30);
 }
 
 img {
@@ -261,11 +270,11 @@ padding: 20px 20px 20px 20px;
 }
 
 
- .contact-me {
-  color: black;
+ .social-me {
+  /* color: black; */
   text-align: center;
-  border: rgb(229, 59, 30) ;
-  list-style: none;
+  /* border: rgb(229, 59, 30) ; */
+  /* list-style: none; */
 
   /* margin-top: 50px;
   box-shadow: none;
@@ -274,19 +283,19 @@ padding: 20px 20px 20px 20px;
 
 }
 
-.contact-me li:nth-child(1) a {
+.social-me li:nth-child(1) a {
   margin-left: 0;
   margin-right: 0;
 }
 
-.contact-me span {
+.social-me span {
   font-size: 3em;
-  color: black;
+  color:#13344c;
   -webkit-transition: color ease .4s;
           transition: color ease .4s;
 }
 
-.contact-me span:hover {
+.social-me span:hover {
   color: rgb(229, 59, 30);
 
  /* END CONTACT
