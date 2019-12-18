@@ -159,10 +159,14 @@
       </section>
 
       <!--End Timeline-->
+      
 
-      <div class="row skills">
-        <div class="container">
-          <div class="twelve columns">Skills go here</div>
+      <!--Skills Graph-->
+      <div class="skills container">
+        <div class="twelve columns">
+          <canvas id="myBarChart"></canvas>
+
+          </div>
         </div>
       </div>
       <!--End Skills Graph-->
@@ -233,12 +237,19 @@
 
     <!-- <bgAnimated.js embedding> -->
 
-    <script type="text/javascript">
-      window.onresize = function() {
-        nodesjs.setWidth(window.innerWidth);
-        nodesjs.setHeight(window.innerHeight);
-      };
-    </script>
+      <script type="text/javascript">
+        window.onresize = function() {
+          nodesjs.setWidth(window.innerWidth);
+          nodesjs.setHeight(window.innerHeight);
+        };
+      </script>
+    <!-- <chart.js embedding> -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+      <script src="./scripts/skillsGraph.js"></script>
+      <script>
+        const myBarChart = new Chart(ctx, {...});
+      </script>
+
     <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   </body>
