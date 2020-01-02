@@ -1,11 +1,16 @@
 var ctx = document.getElementById('myBarChart');
+
+Chart.defaults.global.animation.duration = 4000;
+
 var myBarChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-        labels: ['HTML', 'CSS', 'JavaScript', 'React', 'Ruby on Rails', 'Photoshop','Illustrator'],
+        labels: ['HTML ' + '\uf13b', 'CSS ' + '\uf38b', 'JavaScript ' + '\uf3b8', 'React ' + '\uf41b', 'Ruby on Rails ' + '\uf3a5', 'Photoshop ' + '\uf778','Illustrator'],
         datasets: [{
             label: 'My Skills',
             data: [19, 13, 12, 10, 5, 17, 10],
+            
+
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -30,12 +35,23 @@ var myBarChart = new Chart(ctx, {
         }]
     },
     options: {
+        
+        
         scales: {
+            xAxes: [{
+                gridLines: {
+                    drawOnChartArea: false
+                }
+            }],
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    fontColor: 'rgba(93, 96, 99)',
+                    fontFamily: "'FontAwesome', 'Raleway'",
+                    fontSize: 20
                 }
             }]
         }
+        
     }
 });

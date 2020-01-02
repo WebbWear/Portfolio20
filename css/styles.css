@@ -26,7 +26,8 @@ h1 {
 .about-section {
   position: relative;
 }
-.about-section #nodes, #overlay {
+.about-section #nodes,
+#overlay {
   position: absolute;
 }
 .about-container {
@@ -43,10 +44,11 @@ h1 {
   /* border: 1px solid black; */
   /* height: 100vh;
   width: 100vw; */
-  position: relative; 
+  position: relative;
   z-index: 100;
 }
-÷ .about-content, #overlay {
+÷ .about-content,
+#overlay {
   /* border: 1px solid black; */
   font-size: 5rem;
   margin: 0;
@@ -55,7 +57,7 @@ h1 {
   top: 50%;
   left: 50%;
   margin-right: -50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
 }
 .highlight {
   color: rgb(229, 59, 30);
@@ -82,7 +84,11 @@ body {
   color: #000;
   overflow-x: hidden;
   padding-bottom: 50px;
-} /* INTRO SECTION
+}
+.timeline {
+}
+
+/* INTRO SECTION
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .intro {
   background: #f2f3ee;
@@ -166,6 +172,13 @@ h1 {
   border-color: transparent transparent transparent #f2f3ee;
 }
 
+.timeline img {
+  width: auto;
+  height: 75px;
+  float: left;
+  margin: 10px 10px 0 0;
+}
+
 time {
   display: block;
   font-size: 1.2rem;
@@ -173,7 +186,7 @@ time {
   margin-bottom: 8px;
 }
 
-/* EFFECTS
+/* TIMELINE EFFECTS
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .timeline ul li::after {
@@ -239,13 +252,12 @@ time {
 
 /* CONTACT
  –––––––––––––––––––––––––––––––––––––––––––––––––– */
- footer nav ul li {
-
+footer nav ul li {
   display: inline;
   margin: 0;
   text-size-adjust: 1rm;
- }
- /* a {
+}
+/* a {
   text-align: center;
   outline: none;
   display: inline-block;
@@ -261,16 +273,13 @@ footer ul li {
   display: inline;
   /* margin: 0; */
   text-align: center;
-
-
 }
 span {
-/* border: 1px solid green; */
-padding: 20px 20px 20px 20px;
+  /* border: 1px solid green; */
+  padding: 20px 20px 20px 20px;
 }
 
-
- .social-me {
+.social-me {
   /* color: black; */
   text-align: center;
   /* border: rgb(229, 59, 30) ; */
@@ -280,7 +289,6 @@ padding: 20px 20px 20px 20px;
   box-shadow: none;
   background: none;
   margin-left: 30px; */
-
 }
 
 .social-me li:nth-child(1) a {
@@ -290,13 +298,14 @@ padding: 20px 20px 20px 20px;
 
 .social-me span {
   font-size: 3em;
-  color:#13344c;
-  -webkit-transition: color ease .4s;
-          transition: color ease .4s;
+  color: #13344c;
+  -webkit-transition: color ease 0.4s;
+  transition: color ease 0.4s;
 }
 
 .social-me span:hover {
   color: rgb(229, 59, 30);
+}
 
- /* END CONTACT
+/* END CONTACT
  –––––––––––––––––––––––––––––––––––––––––––––––––– */
