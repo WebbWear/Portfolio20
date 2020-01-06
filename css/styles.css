@@ -3,14 +3,17 @@
 body {
   position: relative;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
+
 .content-body {
   display: block;
   margin: 0 auto;
   width: 100%;
-  /* border: 3px solid green; */
-  padding: 10px;
+  padding: 0;
 }
+
 .main_nav {
   margin-top: 1em;
   width: 100%;
@@ -83,9 +86,6 @@ body {
   background: #f2f3ee;
   color: #000;
   overflow-x: hidden;
-  padding-bottom: 50px;
-}
-.timeline {
 }
 
 /* INTRO SECTION
@@ -250,8 +250,29 @@ time {
 /* END TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+/* SKILLS
+ –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.skill-header {
+  text-align: center;
+}
+.skills {
+  /* border: 10px solid purple; */
+  margin-bottom: 5rem;
+}
+
+@media screen and (max-width: 600px) {
+  #myBarChart {
+    background-color: olive;
+    color: white;
+  }
+}
+
 /* CONTACT
  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+footer {
+  background: #13344c;
+}
 footer nav ul li {
   display: inline;
   margin: 0;
@@ -298,13 +319,13 @@ span {
 
 .social-me span {
   font-size: 3em;
-  color: #13344c;
+  color: #f2f3ee;
   -webkit-transition: color ease 0.4s;
   transition: color ease 0.4s;
 }
 
 .social-me span:hover {
-  color: rgb(229, 59, 30);
+  color: #499fa4;
 }
 
 /* END CONTACT
