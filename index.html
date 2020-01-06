@@ -5,8 +5,8 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8" />
     <title>Jeff Webb Portfolio</title>
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta name="Jeff Webb Portfolio" content="" />
+    <meta name="Jeff Webb" content="" />
 
     <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -34,31 +34,50 @@
 
     <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
   </head>
-  <!-- About-->
   <body>
     <div class="content-body">
       <header class="main_nav">
         <div class="container main">
           <div class="row">
-            <div class="four columns">
-              <h4>Jeff Webb | Portfolio</h4>
-            </div>
-            <div class="four columns">Contact</div>
-            <div class="four columns">Blog</div>
+            <nav class="navbar">
+              <div class="container">
+                <div class="six columns logo_nav">
+                  <h4>
+                    <a class="name-logo" href="index.html"
+                      >Jeff Webb | Portfolio</a
+                    >
+                  </h4>
+                </div>
+                <ul class="two columns">
+                  <li>
+                    <a href="work.html" class="nav-links">Work</a>
+                  </li>
+                </ul>
+                <ul class="two columns">
+                  <li>
+                    <a href="blog.html" class="nav-links">Blog</a>
+                  </li>
+                </ul>
+                <ul class="two columns">
+                  <li>
+                    <a href="contact.html" class="nav-links">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
           </div>
         </div>
       </header>
+
+      <!-- HEADLINE AND CANVAS-->
 
       <div class="about-section">
         <canvas id="nodes"></canvas>
         <div class="container about-container">
           <div class="row">
             <div class="twelve columns about-content">
-              <!-- <div class="four columns head-shot">
-              <img src="images/Jeff_Webb.png" alt="Jeff Webb Head shot" />
-            </div> -->
               <div id="overlay">
                 "Hello my name is<span class="highlight">Jeff Webb</span>I'm a
                 Web Developer"
@@ -67,8 +86,9 @@
           </div>
         </div>
       </div>
-      <!--End About-->
-      <!--Timeline-->
+      <!--END HEADLINE AND CANVAS-->
+
+      <!--TIMELINE-->
       <section class="intro">
         <div class="container">
           <h1>My Timeline &darr;</h1>
@@ -129,6 +149,23 @@
                 delectus expedita fugiat consequatur eveniet neque odio tempore
                 possimus distinctio molestiae.
               </p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h1>ARMY 1991-1993</h1>
+              <hr />
+              <img
+                src="./images/timeline-img/ARMY.png"
+                alt="ARMY logo"
+                class="img-timeline"
+              />
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Accusamus aut odio veniam, nemo cupiditate nobis esse vero magni
+                in suscipit nihil ratione recusandae ad qui!
+              </p>
+              <br />
             </div>
           </li>
           <li>
@@ -234,9 +271,10 @@
         </ul>
       </section>
 
-      <!--End Timeline-->
+      <!--END TIMELINE-->
 
-      <!--Skills Graph-->
+      <!--SKILLS GRAPH-->
+
       <div class="row">
         <span class="twelve column skill-header"><h3>Skills</h3></span>
       </div>
@@ -245,7 +283,20 @@
           <canvas id="myBarChart"></canvas>
         </div>
       </div>
-      <!--End Skills Graph-->
+
+      <!--END SKILLS GRAPH-->
+
+      <header class="main_nav">
+        <div class="container main">
+          <div class="row">
+            <div class="four columns">
+              <h4>Jeff Webb | Portfolio</h4>
+            </div>
+            <div class="four columns">Contact</div>
+            <div class="four columns">Blog</div>
+          </div>
+        </div>
+      </header>
 
       <footer>
         <div class="social-me">
@@ -319,6 +370,7 @@
         nodesjs.setHeight(window.innerHeight);
       };
     </script>
+
     <!-- <chart.js embedding> -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="./scripts/skillsGraph.js"></script>
