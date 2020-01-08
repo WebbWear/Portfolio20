@@ -54,14 +54,15 @@
   .container {
     width: 80%;
   }
-  .column,
+  /* Problem on work.html second row was shifting right */
+  /* .column,
   .columns {
     margin-left: 4%;
-  }
-  .column:first-child,
+  } */
+  /* .column:first-child,
   .columns:first-child {
     margin-left: 0;
-  }
+  } */
 
   .one.column,
   .one.columns {

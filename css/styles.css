@@ -14,6 +14,11 @@ body {
   min-height: 90vh;
 }
 
+#content-wrap {
+  padding-bottom: 2.5rem;
+  /* Footer height */
+}
+
 hr.divider {
   margin: 0em;
   border-width: 1px;
@@ -96,10 +101,12 @@ ul.navbar li a:hover {
 .about-section {
   position: relative;
 }
+
 .about-section #nodes,
 #overlay {
   position: absolute;
 }
+
 .about-container {
   /* border: 1px solid green; */
   overflow: hidden;
@@ -122,6 +129,7 @@ ul.navbar li a:hover {
   margin-right: -50%;
   transform: translate(-50%, -50%);
 }
+
 .highlight {
   color: rgb(229, 59, 30);
 }
@@ -278,6 +286,7 @@ time {
   .timeline ul li div {
     width: 250px;
   }
+
   .timeline ul li:nth-child(even) div {
     left: -289px;
     /*250+45-6*/
@@ -288,12 +297,15 @@ time {
   .timeline ul li {
     margin-left: 20px;
   }
+
   .timeline ul li div {
     width: calc(100vw - 91px);
   }
+
   .timeline ul li:nth-child(even) div {
     left: 45px;
   }
+
   .timeline ul li:nth-child(even) div::before {
     left: -15px;
     border-width: 8px 16px 8px 0;
@@ -310,6 +322,7 @@ time {
 .skill-header {
   text-align: center;
 }
+
 .skills {
   /* border: 10px solid purple; */
   margin-bottom: 5rem;
@@ -327,11 +340,13 @@ time {
 footer {
   background: #13344c;
 }
+
 footer nav ul li {
   display: inline;
   margin: 0;
   text-size-adjust: 1rm;
 }
+
 /* a {
   text-align: center;
   outline: none;
@@ -349,6 +364,7 @@ footer ul li {
   /* margin: 0; */
   text-align: center;
 }
+
 span {
   /* border: 1px solid green; */
   padding: 20px 20px 20px 20px;
@@ -381,6 +397,7 @@ span {
 .social-me span:hover {
   color: #499fa4;
 }
+
 /* END SOCIAL
  –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -409,9 +426,23 @@ span {
 
 /* CARD FROM WORK.HTML
  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.all-cards {
+  padding: 1em;
+
+  /* border: 2px solid green; */
+}
+
+.card-container {
+  /* margin: 1em 1em 1em 1em; */
+  margin-left: 2em;
+  margin-bottom: 2em;
+  /* border: 2px solid palevioletred; */
+}
+
 .card {
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
 }
@@ -427,5 +458,6 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 100px;
   left: 0;
 }
