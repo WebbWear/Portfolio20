@@ -3,8 +3,20 @@
 body {
   position: relative;
   width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
+  align-items: center;
+}
+
+#page-container {
+  position: relative;
+  min-height: 90vh;
+}
+
+hr.divider {
+  margin: 0em;
+  border-width: 1px;
 }
 
 .content-body {
@@ -14,9 +26,22 @@ body {
   padding: 0;
 }
 
+.header-container {
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  clear: both;
+  margin: 0 auto;
+}
+
 .logo_nav {
   margin-top: 1.5em;
-  width: 100%;
 }
 
 h1 {
@@ -26,14 +51,15 @@ h1 {
 .name-logo {
   text-decoration: none;
   color: black;
-  /* padding-top: 1.5em; */
+  width: 100%;
 }
 
 a:hover {
   color: black;
 }
 
-ul {
+ul.navbar {
+  float: right;
   list-style-type: none;
   padding-top: 1.5em;
   overflow: hidden;
@@ -41,7 +67,12 @@ ul {
   /* top: 0; */
 }
 
-li a {
+ul.navbar li {
+  float: left;
+  padding-right: 2em;
+}
+
+ul.navbar li a {
   display: block;
   color: black;
   text-align: center;
@@ -49,7 +80,7 @@ li a {
   text-decoration: none;
 }
 
-.nav-links:hover {
+ul.navbar li a:hover {
   border-bottom: 2px solid rgb(229, 59, 30);
   color: black;
 }
@@ -119,7 +150,7 @@ body {
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
@@ -291,7 +322,7 @@ time {
   }
 }
 
-/* CONTACT
+/* SOCIAL
  –––––––––––––––––––––––––––––––––––––––––––––––––– */
 footer {
   background: #13344c;
@@ -350,6 +381,51 @@ span {
 .social-me span:hover {
   color: #499fa4;
 }
+/* END SOCIAL
+ –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* CONTACT
+ –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.contact-p {
+  margin: auto;
+  width: 50%;
+  padding: 3em 3em;
+}
+
+.form-box {
+  max-width: 500px;
+  margin: auto;
+  padding: 50px;
+  background: #f2f3ee;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-box:active {
+  box-shadow: 0 0 6px #499fa4;
+}
 
 /* END CONTACT
  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* CARD FROM WORK.HTML
+ –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.card {
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+.text-container {
+  padding: 10px;
+}
+
+/* END CARD 
+
+/* FOOTER */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
