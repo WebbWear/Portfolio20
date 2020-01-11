@@ -333,7 +333,7 @@ time {
 
 @media screen and (max-width: 600px) {
   #myBarChart {
-    background-color: olive;
+    background-color: f2f3ee;
     color: white;
   }
 }
