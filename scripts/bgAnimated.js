@@ -128,11 +128,12 @@ var NodesJs = (function (parameters) {
 
         t_NodesJs.placeNodes(t_NodesJs.number);
 
+        let counter = 0;
         var step = function () {
             window.requestAnimationFrame(step);
-
+            counter += 1;
+            if (counter % 4 !== 0) { return }
             ctx.clearRect(0, 0, cw, ch);
-
             if (!t_NodesJs.nobg) {
                 var r = Math.floor(((Math.sin(Math.PI * 2 * Date.now() / t_NodesJs.backgroundDuration - Math.PI/2)+1)/2) * (t_NodesJs.backgroundFrom[0] - t_NodesJs.backgroundTo[0] + 1) + t_NodesJs.backgroundTo[0]);
                 var g = Math.floor(((Math.sin(Math.PI * 2 * Date.now() / t_NodesJs.backgroundDuration - Math.PI/2)+1)/2) * (t_NodesJs.backgroundFrom[1] - t_NodesJs.backgroundTo[1] + 1) + t_NodesJs.backgroundTo[1]);

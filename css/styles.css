@@ -406,6 +406,14 @@ span {
   padding: 3em 3em;
 }
 
+@media screen and (max-width: 600px) {
+  .contact-p {
+    margin: auto;
+    width: 75%;
+    padding-bottom: 2em;
+  }
+}
+
 .form-box {
   max-width: 500px;
   margin: auto;
