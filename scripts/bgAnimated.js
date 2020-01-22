@@ -118,16 +118,20 @@ var NodesJs = (function (parameters) {
     window[window.addEventListener ? 'addEventListener': 'attachEvent']
     (window.addEventListener ? 'load': 'onload', function () {
         // Helper to determine if an element is visible
-        var isScrolledIntoView = function(elem) {
-            var docViewTop = window.scrollTop();
-            var docViewBottom = docViewTop + window.height();
+        function isScrolledIntoView(el) {
+            var rect = el.getBoundingClientRect();
+            var elemTop = rect.top;
+            var elemBottom = rect.bottom;
         
-            var elemTop = document.getElementById(elem).offset().top;
-            var elemBottom = elemTop + document.getElementById(elem).height();
-        
-            return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+            // Only completely visible elements return true:
+            var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+            // Partially visible elements return true:
+            //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+            return isVisible;
         }
+
         var isElementInView = isScrolledIntoView(t_NodesJs.id)
+        
         if (isElementInView) {
             console.log('in view');
         } else {
