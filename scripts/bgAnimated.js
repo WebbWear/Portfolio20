@@ -117,6 +117,23 @@ var NodesJs = (function (parameters) {
 
     window[window.addEventListener ? 'addEventListener': 'attachEvent']
     (window.addEventListener ? 'load': 'onload', function () {
+        // Helper to determine if an element is visible
+        var isScrolledIntoView = function(elem) {
+            var docViewTop = window.scrollTop();
+            var docViewBottom = docViewTop + window.height();
+        
+            var elemTop = document.getElementById(elem).offset().top;
+            var elemBottom = elemTop + document.getElementById(elem).height();
+        
+            return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+        }
+        var isElementInView = isScrolledIntoView(t_NodesJs.id)
+        if (isElementInView) {
+            console.log('in view');
+        } else {
+            console.log('out of view');
+        }
+
         canvas = document.getElementById(t_NodesJs.id);
         ctx = canvas.getContext('2d');
 
@@ -132,7 +149,7 @@ var NodesJs = (function (parameters) {
         var step = function () {
             window.requestAnimationFrame(step);
             counter += 1;
-            if (counter % 4 !== 0) { return }
+            if (counter % 2 !== 0) { return }
             ctx.clearRect(0, 0, cw, ch);
             if (!t_NodesJs.nobg) {
                 var r = Math.floor(((Math.sin(Math.PI * 2 * Date.now() / t_NodesJs.backgroundDuration - Math.PI/2)+1)/2) * (t_NodesJs.backgroundFrom[0] - t_NodesJs.backgroundTo[0] + 1) + t_NodesJs.backgroundTo[0]);
