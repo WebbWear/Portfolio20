@@ -22,7 +22,7 @@ fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@Web
       let output = '';
       posts.forEach((item) => {
          output += `
-         <li class="blog__post">
+         <li class="blog__post four columns">
             <a href="${item.link}">
                <img src="${item.thumbnail}" class="blog__topImg"></img>
                <div class="blog__content">
