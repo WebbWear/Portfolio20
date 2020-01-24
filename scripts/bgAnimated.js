@@ -115,28 +115,18 @@ var NodesJs = (function (parameters) {
         });
     });
 
+    // create variable in this scope for whether or not canvas is visible (isElementInView)
+    var isElementInView = false
+
+
+    // add an event listener for scrolling
+        // in here, do the check to determine if the canvas/animation is visible
+        // if so, set 'isElementInView' to true
+          // if we previously were not visible, need to kick off step() again
+        // if not, set to false
+
     window[window.addEventListener ? 'addEventListener': 'attachEvent']
     (window.addEventListener ? 'load': 'onload', function () {
-        // Helper to determine if an element is visible
-        function isScrolledIntoView(el) {
-            var rect = el.getBoundingClientRect();
-            var elemTop = rect.top;
-            var elemBottom = rect.bottom;
-        
-            // Only completely visible elements return true:
-            var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
-            // Partially visible elements return true:
-            //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
-            return isVisible;
-        }
-
-        var isElementInView = isScrolledIntoView(t_NodesJs.id)
-        
-        if (isElementInView) {
-            console.log('in view');
-        } else {
-            console.log('out of view');
-        }
 
         canvas = document.getElementById(t_NodesJs.id);
         ctx = canvas.getContext('2d');
@@ -151,9 +141,40 @@ var NodesJs = (function (parameters) {
 
         let counter = 0;
         var step = function () {
+
             window.requestAnimationFrame(step);
             counter += 1;
-            if (counter % 2 !== 0) { return }
+            if (counter % 8 !== 0) {
+                // OR !isElementInView
+                return 
+            }
+
+        // TODO - make our scroll-short-circuiting better  ----------------------
+
+            // Helper to determine if an element is visible
+        function isScrolledIntoView(el) {
+            var elem = document.getElementById(el);
+            var rect = elem.getBoundingClientRect();
+            var elemTop = rect.top;
+            var elemBottom = rect.bottom;
+        
+            // Only completely visible elements return true:
+            // var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+            // Partially visible elements return true:
+            var isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+            return isVisible;
+        }
+
+        var isElementInView = isScrolledIntoView(t_NodesJs.id)
+
+        if (isElementInView) {
+            console.log('in view');
+        } else {
+            console.log('out of view');
+        } 
+
+        // ---------------------------------------------------------------
+
             ctx.clearRect(0, 0, cw, ch);
             if (!t_NodesJs.nobg) {
                 var r = Math.floor(((Math.sin(Math.PI * 2 * Date.now() / t_NodesJs.backgroundDuration - Math.PI/2)+1)/2) * (t_NodesJs.backgroundFrom[0] - t_NodesJs.backgroundTo[0] + 1) + t_NodesJs.backgroundTo[0]);
