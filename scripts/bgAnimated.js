@@ -118,12 +118,24 @@ var NodesJs = (function (parameters) {
     // create variable in this scope for whether or not canvas is visible (isElementInView)
     var isElementInView = false
 
-
     // add an event listener for scrolling
         // in here, do the check to determine if the canvas/animation is visible
         // if so, set 'isElementInView' to true
           // if we previously were not visible, need to kick off step() again
         // if not, set to false
+    window.addEventListener('scroll', function() {
+        // console.log(window.scrollY)
+        // console.log(window.scrollX)
+        document.getElementById(nodes);
+        var nodes = isElementInView
+            if (nodes) {
+                console.log('OUT OF VIEW');
+            } else {
+                console.log('IN VIEW')
+            }
+    });
+
+    
 
     window[window.addEventListener ? 'addEventListener': 'attachEvent']
     (window.addEventListener ? 'load': 'onload', function () {
@@ -144,7 +156,7 @@ var NodesJs = (function (parameters) {
 
             window.requestAnimationFrame(step);
             counter += 1;
-            if (counter % 8 !== 0) {
+            if (counter % 3 !== 0) {
                 // OR !isElementInView
                 return 
             }
