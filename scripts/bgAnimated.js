@@ -128,10 +128,10 @@ var NodesJs = (function (parameters) {
         // console.log(window.scrollX)
         document.getElementById(nodes);
         var nodes = isElementInView
-            if (nodes) {
+            if (nodes == true) {
                 console.log('OUT OF VIEW');
             } else {
-                console.log('IN VIEW')
+                console.log('IN VIEW');
             }
     });
 
