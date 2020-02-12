@@ -66,6 +66,7 @@ var NodesJs = (function (parameters) {
         return num <= -1;
     };
 
+
     t_NodesJs.pointerCircleRadius
     &&
     window.addEventListener('mousemove', function (event) {
@@ -115,27 +116,7 @@ var NodesJs = (function (parameters) {
         });
     });
 
-    // create variable in this scope for whether or not canvas is visible (isElementInView)
-    var isElementInView = false
-
-    // add an event listener for scrolling
-        // in here, do the check to determine if the canvas/animation is visible
-        // if so, set 'isElementInView' to true
-          // if we previously were not visible, need to kick off step() again
-        // if not, set to false
-    window.addEventListener('scroll', function() {
-        // console.log(window.scrollY)
-        // console.log(window.scrollX)
-        document.getElementById(nodes);
-        var nodes = isElementInView
-            if (nodes == true) {
-                console.log('OUT OF VIEW');
-            } else {
-                console.log('IN VIEW');
-            }
-    });
-
-    
+   
 
     window[window.addEventListener ? 'addEventListener': 'attachEvent']
     (window.addEventListener ? 'load': 'onload', function () {
@@ -151,39 +132,36 @@ var NodesJs = (function (parameters) {
 
         t_NodesJs.placeNodes(t_NodesJs.number);
 
-        let counter = 0;
-        var step = function () {
-
-            window.requestAnimationFrame(step);
-            counter += 1;
-            if (counter % 3 !== 0) {
-                // OR !isElementInView
-                return 
-            }
-
-        // TODO - make our scroll-short-circuiting better  ----------------------
-
-            // Helper to determine if an element is visible
+// Helper to determine if an element is visible
         function isScrolledIntoView(el) {
             var elem = document.getElementById(el);
             var rect = elem.getBoundingClientRect();
             var elemTop = rect.top;
             var elemBottom = rect.bottom;
-        
+
             // Only completely visible elements return true:
             // var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
             // Partially visible elements return true:
             var isVisible = elemTop < window.innerHeight && elemBottom >= 0;
             return isVisible;
         }
+        
+        let counter = 0;
 
-        var isElementInView = isScrolledIntoView(t_NodesJs.id)
-
-        if (isElementInView) {
-            console.log('in view');
-        } else {
-            console.log('out of view');
-        } 
+        var step = function () {
+        // ----------------------------- My custom changes ---------------------------------- 
+            var isElementInView = isScrolledIntoView(t_NodesJs.id)
+            // If the current solution does not solve the resource usage, we would
+            // try this next. Since this will short circuit the 'rAF' call, we will
+            // need to use onScroll to check for the element being visible to fire off 'step' again once it has been stopped. 
+            // if (isElementInView) {
+            //  window.requestAnimationFrame(step);
+            // }
+            window.requestAnimationFrame(step);
+            counter += 1;
+            if (counter % 3 !== 0 || !isElementInView) {
+                return 
+            }
 
         // ---------------------------------------------------------------
 
