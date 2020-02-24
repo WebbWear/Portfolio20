@@ -28,7 +28,7 @@ fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@Web
                <div class="blog__content">
                   <div class="blog_preview">
                      <h2 class="blog__title">${shortenText(item.title, 0, 50)}</h2>
-                     <p class="blog__intro">${shortenText(toText(item.content),0, 300)+ '...'}</p>
+                     <p class="blog__intro">${shortenText(toText(item.content),0, 400)+ '...'}</p>
                   </div>
                   <hr>
                   <div class="blog__info">
