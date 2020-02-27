@@ -36,10 +36,17 @@ var myBarChart = new Chart(ctx, {
     },
 
     
-
+    
     options: {
         legend: {
-            display: false,
+            display: true,
+                plugins: {
+                    deferred: {
+                        // xOffset: 150,   // defer until 150px of the canvas width are inside the viewport
+                        yOffset: '50%', // defer until 50% of the canvas height are inside the viewport
+                        // delay: 500      // delay of 500 ms after the canvas is considered inside the viewport
+                      }
+                  }
         },
         scales: {
             xAxes: [{
@@ -57,35 +64,10 @@ var myBarChart = new Chart(ctx, {
                     fontSize: 20
                 }
             }]
-        }
+        },
+
+        
         
     }
 });
 
-// Below is supposed to fire when scroll into view
-// used code from example http://jsfiddle.net/TSmDV/197/
-
-// var inView = false;
-
-//     function isScrolledIntoView(elem)
-//     {
-//         var docViewTop = $(window).scrollTop();
-//         var docViewBottom = docViewTop + $(window).height();
-    
-//         var elemTop = $(elem).offset().top;
-//         var elemBottom = elemTop + $(elem).height();
-    
-//         return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
-//     }
-    
-//     $(window).scroll(function() {
-//         if (isScrolledIntoView('#myBarChart')) {
-//             if (inView) { return; }
-//             inView = true;
-//             new Chart(
-//                 document.getElementById("myBarChart").getContext("2d"),
-//                 {type: 'horizontalBar', data: data });
-//         } else {
-//             inView = false;  
-//         }
-//     });
