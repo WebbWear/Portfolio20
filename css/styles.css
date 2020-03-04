@@ -1,5 +1,9 @@
 /* Main Layout
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* #myBarChart {
+  width: 50%;
+  height: 400px;
+} */
 html {
   scroll-behavior: smooth;
 }
