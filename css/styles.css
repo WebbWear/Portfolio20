@@ -363,18 +363,6 @@ footer nav ul li {
   text-size-adjust: 1rm;
 }
 
-/* a {
-  text-align: center;
-  outline: none;
-  display: inline-block;
-  text-decoration: none;
-  background: #fcca2f;
-  font-size: 14px;
-  color: steelblue;
-  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
-  -webkit-transition: all ease .3s;
-          transition: all ease .3s;
-} */
 footer ul li {
   display: inline;
   /* margin: 0; */
@@ -428,6 +416,7 @@ span {
 }
 
 .form-box {
+  display: grid;
   max-width: 500px;
   margin: auto;
   padding: 50px;
@@ -446,19 +435,25 @@ span {
  –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .all-cards {
-  height: 100%;
+  text-align: center;
+  overflow: auto;
+  border: solid 1px orange;
   width: 100%;
-  overflow: hidden;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-size, 50rem), 4fr)
+  );
+  grid-gap: 2rem;
 }
 
 .card-container {
-  /* width: 1200px; */
-  display: inline-block;
   margin: 2em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
-  width: 100vw;
-  /* border: 2px solid palevioletred; */
+  height: 100%;
+  background-color: hsl(180, 15%, 80%);
 }
 
 .text-container {
@@ -567,7 +562,7 @@ ul {
 
 .blog__intro {
   display: -webkit-box;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-align: start;
