@@ -436,7 +436,7 @@ span {
 .work-image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 80%;
 }
 
 .all-cards {
@@ -459,9 +459,9 @@ span {
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 0 0 7.75rem 0;
+  margin: 0 0 7.5rem 0;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-  height: auto;
+  height: 80%;
   width: auto;
   opacity: 0;
   transition: 0.5s ease;
@@ -476,7 +476,20 @@ span {
 }
 
 .text-container {
-  padding: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 1rem;
+  height: auto;
+}
+
+.app-logo-left {
+  text-align: center;
+  padding-right: 4rem;
+}
+
+.app-logo-right {
+  text-align: center;
+  padding-left: 2rem;
 }
 
 .card-container:hover .overlay {
