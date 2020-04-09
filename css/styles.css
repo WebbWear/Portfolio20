@@ -435,7 +435,7 @@ span {
  –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .work-image {
   display: block;
-  width: 100%;
+  width: 90vw;
   height: 80%;
 }
 
@@ -506,6 +506,12 @@ span {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+@media (max-width: 500px) {
+  .all-cards {
+    display: block;
+  }
 }
 
 /* END CARD 
