@@ -487,6 +487,13 @@ span {
   padding-right: 4rem;
 }
 
+.app-logo-left-svg {
+  text-align: center;
+  padding-top: 2rem;
+  padding-right: 4rem;
+  padding-left: 2rem;
+}
+
 .app-logo-right {
   text-align: center;
   padding-left: 2rem;
