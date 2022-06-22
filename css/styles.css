@@ -169,7 +169,10 @@ body {
 /* INTRO SECTION
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .intro {
-  background: #f2f3ee;
+  /* border-bottom-style: solid;
+  border-bottom-color: #f2f3ee;
+  border-bottom-width: 7px; */
+  background: #13344c;
   padding: 100px 0;
 }
 
@@ -182,6 +185,13 @@ body {
 
 h1 {
   font-size: 2.5rem;
+}
+/* HERO
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.hero {
+  background: #13344c;
+  padding: 100px;
+  color: white;
 }
 
 /* TIMELINE
